@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:watch": "nodemon"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,20 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
+    "nodemon": "^2.0.12",
     "rimraf": "^3.0.2"
-  }
+  },
+  "nodemonConfig": {
+    "ignore": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    ".git",
+    "node_modules"
+    ],
+    "watch": [
+    "src"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
+    }
 }
