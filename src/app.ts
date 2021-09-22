@@ -7,11 +7,11 @@ app.use(bodyParser.json());
 
 const port = 3000;
 
-app.use('/items', itemsRouter);
-
 app.get('/', (req, res) => {
   res.send('The sedulous hyena ate the antelope..');
 });
+
+app.use('/items', itemsRouter);
 
 
 app.listen(port, () => {
